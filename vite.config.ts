@@ -6,6 +6,7 @@ import solidPlugin from 'vite-plugin-solid'
 import { defineConfig, lazyPlugins } from 'vite-plus'
 
 export default defineConfig({
+  define: { 'import.meta.vitest': 'undefined' },
   fmt: {
     endOfLine: 'lf',
     jsxSingleQuote: true,
@@ -30,7 +31,7 @@ export default defineConfig({
   },
   plugins: lazyPlugins(() => [
     devtools(),
-    cloudflare({ viteEnvironment: { name: 'ssr' } }),
+    ...(process.env.VITEST ? [] : [cloudflare({ viteEnvironment: { name: 'ssr' } })]),
     tailwindcss(),
     tanstackStart({
       spa: {
@@ -43,4 +44,5 @@ export default defineConfig({
   staged: {
     '*': 'vp check --fix',
   },
+  test: { includeSource: ['src/**/*.{ts,tsx}'] },
 })

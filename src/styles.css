@@ -1,5 +1,58 @@
 @import 'tailwindcss';
 
+@theme {
+  --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Martian Mono', ui-monospace, monospace;
+  --font-barcode: 'Libre Barcode 39 Text', monospace;
+
+  --color-paper: #e9ecef;
+  --color-stock: #f6f7f8;
+  --color-ink: #101317;
+  --color-graphite: #5b6470;
+  --color-rule: #c9ced4;
+  --color-laser: #f2353b;
+  --color-console: #15181d;
+  --color-console-text: #d6dbe1;
+
+  --animate-sweep-idle: sweep-idle 3.2s ease-in-out infinite alternate;
+  --animate-sweep-once: sweep-once 0.7s ease-in forwards;
+  --animate-reveal: reveal 0.35s ease-out 0.55s both;
+
+  @keyframes sweep-idle {
+    from {
+      top: 0%;
+    }
+    to {
+      top: 100%;
+    }
+  }
+
+  @keyframes sweep-once {
+    0% {
+      top: 0%;
+      opacity: 1;
+    }
+    85% {
+      opacity: 1;
+    }
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
 * {
   box-sizing: border-box;
 }

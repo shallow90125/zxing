@@ -18,11 +18,14 @@
     "@tanstack/solid-router-devtools": "1.167.2",
     "@tanstack/solid-start": "1.169.4",
     "solid-js": "^1.9.12",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.1.18",
+    "zxing-wasm": "^3.1.6"
   },
   "devDependencies": {
     "@tanstack/devtools-vite": "0.8.5",
     "@tanstack/router-cli": "^1.133.21",
+    "@types/emscripten": "^1.41.6",
+    "@types/node": "^24.19.2",
     "typescript": "^6.0.2",
     "vite": "catalog:",
     "vite-plugin-solid": "^2.11.12",
