@@ -32,7 +32,11 @@ export default defineConfig({
     devtools(),
     cloudflare({ viteEnvironment: { name: 'ssr' } }),
     tailwindcss(),
-    tanstackStart(),
+    tanstackStart({
+      spa: {
+        enabled: true,
+      },
+    }),
     solidPlugin({ ssr: true }),
   ]),
   resolve: { tsconfigPaths: true },
