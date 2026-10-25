@@ -70,12 +70,16 @@ function Home() {
       <footer class='border-rule text-graphite flex flex-wrap gap-x-6 gap-y-2 border-t pt-6 text-xs lg:col-span-2'>
         <a
           href='https://github.com/shallow90125/zxing'
+          target='_blank'
+          rel='noopener noreferrer'
           class='hover:text-ink underline underline-offset-4 transition-colors'
         >
           GitHub
         </a>
         <a
           href='/THIRD_PARTY_LICENSES.txt'
+          target='_blank'
+          rel='noopener noreferrer'
           class='hover:text-ink underline underline-offset-4 transition-colors'
         >
           Third-party licenses
