@@ -1,0 +1,38 @@
+{
+  "name": "zxing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev --port 3000",
+    "generate-routes": "tsr generate",
+    "build": "vite build",
+    "start": "node .output/server/index.mjs",
+    "preview": "vite preview",
+    "deploy": "pnpm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "@cloudflare/vite-plugin": "^1.26.0",
+    "@tailwindcss/vite": "^4.1.18",
+    "@tanstack/solid-router": "1.170.43",
+    "@tanstack/solid-router-devtools": "1.167.2",
+    "@tanstack/solid-start": "1.169.4",
+    "solid-js": "^1.9.12",
+    "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "@tanstack/devtools-vite": "0.8.5",
+    "@tanstack/router-cli": "^1.133.21",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.0",
+    "vite-plugin-solid": "^2.11.12",
+    "wrangler": "^4.70.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "lightningcss",
+      "sharp",
+      "workerd"
+    ]
+  }
+}
