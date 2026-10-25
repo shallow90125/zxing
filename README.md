@@ -30,7 +30,6 @@ If you prefer not to use Tailwind CSS:
 3. Remove `tailwindcss()` from the plugins array in `vite.config.ts`
 4. Remove `@tailwindcss/vite` and `tailwindcss` from `package.json`
 
-
 ## Deploy to Cloudflare Workers
 
 This project uses the Cloudflare Vite plugin (configured in `vite.config.ts`) and `wrangler.jsonc`:
@@ -42,8 +41,6 @@ This project uses the Cloudflare Vite plugin (configured in `vite.config.ts`) an
 For production env vars, run `wrangler secret put MY_VAR` for each secret listed in `.env.example`. Public (non-secret) vars go in `wrangler.jsonc` under `vars`.
 
 KV, D1, R2, and Durable Object bindings are configured in `wrangler.jsonc` — see https://developers.cloudflare.com/workers/wrangler/configuration/.
-
-
 
 ## Routing
 
@@ -62,13 +59,13 @@ Now that you have two routes you can use a `Link` component to navigate between 
 To use SPA (Single Page Application) navigation you will need to import the `Link` component from `@tanstack/solid-router`.
 
 ```tsx
-import { Link } from "@tanstack/solid-router";
+import { Link } from '@tanstack/solid-router'
 ```
 
 Then anywhere in your JSX you can use it like so:
 
 ```tsx
-<Link to="/about">About</Link>
+<Link to='/about'>About</Link>
 ```
 
 This will create a link that will navigate to the `/about` route.
@@ -116,19 +113,13 @@ function PeopleComponent() {
   const data = Route.useLoaderData()
   return (
     <ul>
-      <For each={data().results}>
-        {(person) => <li>{person.name}</li>}
-      </For>
+      <For each={data().results}>{(person) => <li>{person.name}</li>}</For>
     </ul>
   )
 }
 ```
 
 Loaders simplify your data fetching logic dramatically. Check out more information in the [Loader documentation](https://tanstack.com/router/latest/docs/framework/solid/guide/data-loading#loader-parameters).
-
-
-
-
 
 # Learn More
 

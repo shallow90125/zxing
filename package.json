@@ -3,12 +3,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite dev --port 3000",
+    "dev": "vp dev --port 3000",
     "generate-routes": "tsr generate",
-    "build": "vite build",
+    "build": "vp build",
     "start": "node .output/server/index.mjs",
-    "preview": "vite preview",
-    "deploy": "pnpm run build && wrangler deploy"
+    "preview": "vp preview",
+    "deploy": "pnpm run build && wrangler deploy",
+    "prepare": "vp config"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.26.0",
@@ -23,16 +24,9 @@
     "@tanstack/devtools-vite": "0.8.5",
     "@tanstack/router-cli": "^1.133.21",
     "typescript": "^6.0.2",
-    "vite": "^8.0.0",
+    "vite": "catalog:",
     "vite-plugin-solid": "^2.11.12",
+    "vite-plus": "catalog:",
     "wrangler": "^4.70.0"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "lightningcss",
-      "sharp",
-      "workerd"
-    ]
   }
 }

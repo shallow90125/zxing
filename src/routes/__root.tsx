@@ -1,20 +1,13 @@
-import {
-  HeadContent,
-  Outlet,
-  Scripts,
-  createRootRouteWithContext,
-} from '@tanstack/solid-router'
-
+import { HeadContent, Outlet, Scripts, createRootRouteWithContext } from '@tanstack/solid-router'
 import { TanStackRouterDevtools } from '@tanstack/solid-router-devtools'
-
-import { HydrationScript } from 'solid-js/web'
 import { Suspense } from 'solid-js'
+import { HydrationScript } from 'solid-js/web'
 
 import styleCss from '../styles.css?url'
 
 export const Route = createRootRouteWithContext()({
   head: () => ({
-    links: [{ rel: 'stylesheet', href: styleCss }],
+    links: [{ href: styleCss, rel: 'stylesheet' }],
   }),
   shellComponent: RootComponent,
 })
